@@ -21,8 +21,8 @@ English | [简体中文](README-CN.md)
 ### Clone the project to your local machine:
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/PickStars308/StarTrailWebsite.git
+cd StarTrailWebsite
 npm install
 npm run dev
 ```
@@ -52,7 +52,7 @@ Storage under this path
 
 If you'd like to contribute to this project, you're welcome to do so! You can contribute in the following ways:
 
-- **Submit an issue**: If you encounter any problems while using the project, please submit an [issue](https://github.com/your-username/your-repo/issues), describe the problem, and provide reproduction steps if possible.
+- **Submit an issue**: If you encounter any problems while using the project, please submit an [issue](https://github.com/PickStars308/StarTrailWebsite/issues), describe the problem, and provide reproduction steps if possible.
 
 ## License
 

@@ -22,8 +22,8 @@
 ### 克隆项目到本地：
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/PickStars308/StarTrailWebsite.git
+cd StarTrailWebsite
 npm install
 npm run dev
 ```
@@ -53,7 +53,7 @@ public/assets/Data/Json/
 
 如果你愿意为这个项目做出贡献，欢迎你！你可以通过以下方式进行：
 
-- 提交问题：如果你在使用过程中遇到任何问题，请提交一个 [issue](https://github.com/your-username/your-repo/issues)，描述问题并尽可能提供复现步骤。
+- 提交问题：如果你在使用过程中遇到任何问题，请提交一个 [issue](https://github.com/PickStars308/StarTrailWebsite/issues)，描述问题并尽可能提供复现步骤。
 
 ## 许可证
 
