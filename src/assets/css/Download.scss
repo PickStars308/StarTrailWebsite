@@ -1,0 +1,64 @@
+section {
+  &.PickstarsLife,
+  &.DownloadPickstars {
+    .item {
+      position: relative;
+      width: 17.6%;
+      height: 80px;
+      line-height: 80px;
+      margin: 10px 1.2%;
+      padding: 5px 0;
+      text-align: center;
+      float: left;
+      transition: all 0.2s;
+      opacity: 0.9;
+    }
+
+    .item:hover {
+      opacity: 1;
+      transform: translateY(-10px);
+      -webkit-animation: index-link-active 1s cubic-bezier(0.315, 0.605, 0.375, 0.925) forwards;
+      animation: index-link-active 1s cubic-bezier(0.315, 0.605, 0.375, 0.925) forwards;
+    }
+
+    .item .inner {
+      text-decoration: none;
+      color: #fff;
+      position: relative;
+      z-index: 5;
+    }
+
+    .item .bg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1.8%;
+      z-index: 0;
+      transition: all 0.15s;
+    }
+
+    .item:hover .bg {
+      height: 100%;
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.28);
+    }
+
+    .item i {
+      font-size: 20px;
+    }
+
+    .item span {
+      display: inline-block;
+      width: 100px;
+    }
+
+    .Clear.Col3 {
+      .item {
+        width: 30.93%;
+        margin: 10px 1.2%;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "use": true,
+    "name": "首 页",
+    "link": "#",
+    "target": ""
+  },
+  {
+    "use": true,
+    "name": "服务器状态",
+    "link": "https://stats.uptimerobot.com/KRCYholq9z",
+    "target": "_blank"
+  }
+]

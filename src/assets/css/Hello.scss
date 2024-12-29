@@ -1,0 +1,97 @@
+section {
+  &.Hello {
+    .Intro {
+      color: #fff;
+      height: 100vh;
+      padding: 0;
+
+      .HelloContainer {
+        position: absolute;
+        bottom: 20%;
+        left: 0;
+      }
+    }
+
+    .SectionTitle {
+      font-size: 2.5rem;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+    }
+
+    .SectionSubtitle {
+      display: flex;
+      align-items: center;
+      padding-top: 0.6em;
+    }
+
+    .RoundedSquares {
+      margin-right: 1rem;
+      display: flex;
+      gap: 0.5rem;
+
+      > div {
+        height: 0.75rem;
+        width: 0.75rem;
+        border-radius: 9999px;
+
+        &.bg-red {
+          background-color: red;
+        }
+
+        &.bg-yellow {
+          background-color: yellow;
+        }
+
+        &.bg-green {
+          background-color: green;
+        }
+      }
+    }
+
+    .TextWhite {
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 1.5em;
+      letter-spacing: 0.2em;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  section {
+    &.Hello {
+      .HelloContainer {
+        width: 90%;
+        padding: 5%;
+        text-align: center;
+        bottom: 50%;
+
+        .RoundedSquares {
+          float: none;
+          margin-right: 0;
+          padding: 20px;
+        }
+
+        .SectionTitle {
+          font-size: 26px;
+        }
+
+        .SectionSubtitle {
+          display: flex;
+          flex-direction: column;
+          padding-top: 0;
+        }
+
+        .TextWhite {
+          font-size: 14px;
+        }
+
+        .SectionTitle,
+        .TextWhite {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
