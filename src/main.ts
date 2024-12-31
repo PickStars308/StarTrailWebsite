@@ -1,7 +1,5 @@
 import App from "@/App.vue";
 
-import * as ElementPlusIconsVue from "@element-plus/icons-vue";
-
 import { DatePicker } from "ant-design-vue";
 // 引入 ElementPlus
 import ElementPlus from "element-plus";
@@ -22,12 +20,8 @@ const pinia = createPinia();
 // 使用持久化插件
 pinia.use(piniaPluginPersistedState);
 app.use(ElementPlus);
-for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
-  app.component(key, component);
-}
 
 app.use(DatePicker);
 app.use(pinia);
-
 
 app.mount("#app");

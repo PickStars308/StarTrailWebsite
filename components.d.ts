@@ -7,10 +7,13 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    BottomNav: typeof import('./src/components/BottomNav.vue')['default']
     Contact: typeof import('./src/components/Contact.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Friends: typeof import('./src/components/Friends.vue')['default']
+    Loading: typeof import('./src/components/Loading.vue')['default']
     Menu: typeof import('./src/components/Menu.vue')['default']
+    SIcon: typeof import('./src/components/S-icon.vue')['default']
     Skills: typeof import('./src/components/Skills.vue')['default']
     StarTrails: typeof import('./src/components/StarTrails.vue')['default']
     Yulu: typeof import('./src/components/Yulu.vue')['default']

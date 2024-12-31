@@ -15,8 +15,14 @@
 
 ## 预览
 
-![预览图片](./Preview/20241228-165315.png "预览图片")
+### V1.0
 
+![Preview Image](./Preview/20241228-165315.png "Preview Image")
+
+### V2.0
+
+![Preview Image V2.0](./Preview/31-12-2024_222014_localhost.jpeg "Preview Image V2.0")
+ 
 ## 使用说明
 
 ### 克隆项目到本地：
@@ -39,14 +45,17 @@ vue ui
 命令来启动一个图形界面，选择项目，然后选择运行项目。
 
 ## 配置
+
 - 导航栏
 - 技巧进度
 - 生活的地方
 
 可以通过配置文件修改配置文件改，配置文件格式为JSON，统一在
+
 ```bash
 public/assets/Data/Json/
 ```
+
 此路径下存储
 
 ## 贡献

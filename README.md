@@ -14,7 +14,12 @@ English | [简体中文](README-CN.md)
 
 ## Preview
 
+### V1.0
 ![Preview Image](./Preview/20241228-165315.png "Preview Image")
+
+### V2.0
+![Preview Image V2.0](./Preview/31-12-2024_222014_localhost.jpeg "Preview Image V2.0")
+
 
 ## Instructions
 

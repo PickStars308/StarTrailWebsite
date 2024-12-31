@@ -61,3 +61,13 @@ section {
     }
   }
 }
+
+@media (max-width: 700px) {
+  section {
+    &.PickstarsFriend {
+      .item {
+        width: -webkit-fill-available;
+      }
+    }
+  }
+}

@@ -3,7 +3,8 @@ import { fetchDownload } from "@/assets/Ts/FetchDownload";
 
 import { useMainStore } from "@/stores/index";
 import { checkDays, helloInit } from "@/Utils/Home";
-import { onMounted } from "vue";
+import { ref, onMounted } from "vue";
+import Loading from "./components/Loading.vue";
 
 const userStore = useMainStore();
 
@@ -11,20 +12,21 @@ console.info(
   `
 %c 摘星辰 - 星辰工具箱
 %c
-                                                                        
+
+
   ██████╗ ██╗ ██████╗██╗  ██╗    ███████╗████████╗ █████╗ ██████╗ ███████╗
   ██╔══██╗██║██╔════╝██║ ██╔╝    ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔════╝
   ██████╔╝██║██║     █████╔╝     ███████╗   ██║   ███████║██████╔╝███████╗
   ██╔═══╝ ██║██║     ██╔═██╗     ╚════██║   ██║   ██╔══██║██╔══██╗╚════██║
   ██║     ██║╚██████╗██║  ██╗    ███████║   ██║   ██║  ██║██║  ██║███████║
   ╚═╝     ╚═╝ ╚═════╝╚═╝  ╚═╝    ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
-                                                                        
+
 %c
   版本信息：${process.env.VITE_PICKSTARS_VERSION}
   作者：摘星辰
   Github：https://github.com/PickStars308
   网站：https://www.pickstars.cn
-  
+
 %c
   当前开发环境：${process.env.NODE_ENV}
 `,
@@ -33,6 +35,8 @@ console.info(
   "font-size:12px;color: #000000;",
   "font-size:12px;color: #000000;"
 );
+
+const isVisible = ref(true);
 
 onMounted(() => {
   checkDays();
@@ -50,6 +54,13 @@ onMounted(() => {
     } else {
       console.error("Background not found");
     }
+
+    if (window.scrollY > 0) {
+      isVisible.value = false; // 当滚动离开顶部时，隐藏 BottomNav
+    } else {
+      isVisible.value = true; // 滚动回顶部时，显示 BottomNav
+    }
+
   });
 });
 </script>
@@ -57,8 +68,11 @@ onMounted(() => {
 <script lang="ts"></script>
 
 <template>
+  <!-- 加载中 -->
+  <Loading v-if="userStore.isLoading" />
+
   <!-- 导航 -->
-  <Menu />
+  <BottomNav class="bottom-nav" :class="{ hide: !isVisible }" />
 
   <!-- 主体 -->
   <main>
@@ -167,4 +181,23 @@ onMounted(() => {
 @use "@/assets/css/style" as *;
 </style>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+/* 设置 BottomNav 的平滑过渡动画 */
+.bottom-nav {
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  will-change: transform; /* 提示浏览器优化 transform 动画 */
+
+  &.hide {
+    transform: translateY(100%);
+  }
+}
+
+.bottom-nav:not(.hide) {
+  transform: translateY(0);
+}
+</style>
