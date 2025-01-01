@@ -11,6 +11,7 @@ declare module 'vue' {
     Contact: typeof import('./src/components/Contact.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Friends: typeof import('./src/components/Friends.vue')['default']
+    Lantern: typeof import('./src/components/Lantern.vue')['default']
     Loading: typeof import('./src/components/Loading.vue')['default']
     Menu: typeof import('./src/components/Menu.vue')['default']
     SIcon: typeof import('./src/components/S-icon.vue')['default']

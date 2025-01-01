@@ -5,6 +5,7 @@ import { useMainStore } from "@/stores/index";
 import { checkDays, helloInit } from "@/Utils/Home";
 import { ref, onMounted } from "vue";
 import Loading from "./components/Loading.vue";
+import Lantern from "./components/Lantern.vue";
 
 const userStore = useMainStore();
 
@@ -60,7 +61,6 @@ onMounted(() => {
     } else {
       isVisible.value = true; // 滚动回顶部时，显示 BottomNav
     }
-
   });
 });
 </script>
@@ -68,6 +68,8 @@ onMounted(() => {
 <script lang="ts"></script>
 
 <template>
+  <Lantern />
+
   <!-- 加载中 -->
   <Loading v-if="userStore.isLoading" />
 
