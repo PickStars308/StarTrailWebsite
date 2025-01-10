@@ -16,8 +16,6 @@ declare module 'vue' {
     SkillsView: typeof import('./src/components/SkillsView.vue')['default']
     StarTrails: typeof import('./src/components/StarTrails.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon.vue')['default']
-    Ty: typeof import('./src/components/ty.vue')['default']
     Typed: typeof import('./src/components/Typed.vue')['default']
-    Typeit: typeof import('./src/components/Typeit.vue')['default']
   }
 }

@@ -156,7 +156,6 @@ onMounted(async () => {
         <div class="Clear">
           <div class="Introduct">
             <div class="AboutMe">
-
               <img
                 class="Avatar"
                 src="https://q2.qlogo.cn/headimg_dl?dst_uin=1402832033&spec=640"
@@ -170,12 +169,10 @@ onMounted(async () => {
                 一望无际的迷雾中，有人在寻找光明。<br />
                 <br />共同努力，期待未来！
               </p>
-
             </div>
             <!-- 摘星辰生活的地方 -->
             <div class="PickstarsLife">
               <ContactView />
-
             </div>
             <div class="ChatBox">
               <div class="Line Loading" :class="[{ hidden: !userStore.isLoading }]">

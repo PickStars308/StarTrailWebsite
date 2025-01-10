@@ -40,7 +40,7 @@ onMounted(() => {
 <template>
   <div class="SectionTitle">
     <div v-if="poem" class="poem">
-      <Typed :typedList="[poem.title]" :loop="false" :speed="100"/>
+      <Typed :typedList="[poem.title]" :loop="false" :speed="100" />
     </div>
     <div v-else class="loading">正在加载...</div>
   </div>

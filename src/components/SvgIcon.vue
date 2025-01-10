@@ -4,7 +4,6 @@
   </svg>
 </template>
 
-
 <script setup lang="ts">
 import { computed } from "vue";
 
@@ -34,7 +33,6 @@ const svgClass = computed(() => {
   return "SvgIcon";
 });
 </script>
-
 
 <style scoped>
 .SvgIcon {
