@@ -1,0 +1,85 @@
+div {
+  &.PickstarsLife {
+    .item {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      position: relative;
+      text-align: center;
+      transition: .2s all;
+      position: relative;
+      margin: 10px 20px 10px 0;
+
+
+      i {
+        position: relative;
+        display: inline-block;
+        font-size: 26px;
+        z-index: 2;
+        transition: .3s all;
+      }
+
+      .bg {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background-color: #333;
+        transition: .2s all;
+        border-radius: 2px;
+        z-index: 0;
+      }
+
+
+      span {
+        font-size: 12px;
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 80px;
+        height: auto;
+        line-height: 1;
+        z-index: 2;
+        opacity: 0;
+        transition: .3s all;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+
+        i {
+          transform: translateY(-10px);
+        }
+
+        .bg {
+          height: 100%;
+          width: 100%;
+          border-radius: 5px;
+          box-shadow: 0 3px 20px rgba(0, 0, 0, 0.28);
+        }
+
+        span {
+          opacity: .6;
+          bottom: 16px;
+        }
+
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 700px) {
+  section {
+    &.PickstarsLife {
+      .item {
+        width: -webkit-fill-available !important;
+      }
+    }
+  }
+}

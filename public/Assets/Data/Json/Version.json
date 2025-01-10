@@ -1,0 +1,31 @@
+{
+  "MainSwitch": true,
+  "NoTip": "<h3>全新主页开发中...</h3> <h4>摘星辰的 \"程序猿\" 还在开发新官网...</h4> <h4>暂不提供下载服务...</h4> ",
+  "Release": {
+    "Use": {
+      "IsUse": false,
+      "NoUseTip": "摘星辰的 \"程序猿\" 还在开发新官网...</h4> <h4>正在抽时间开发呢...</h4>"
+    },
+    "AppName": "摘星辰",
+    "VersionCode": "1",
+    "Version": "1.0.0",
+    "UpdateLog": [
+      "摘星辰V1.0(1)发布",
+      "全新功能",
+      "UI全面优化",
+      "更多功能将在后续版本陆续开发，请各位用户等待"
+    ],
+    "DownloadUrl": "https://example.com/"
+  },
+  "Beta": {
+    "Use": {
+      "IsUse": false,
+      "NoUseTip": "Beta版本不建议使用，请使用正式版本"
+    },
+    "AppName": "摘星辰",
+    "VersionCode": "1",
+    "Version": "1.0.0-Beta",
+    "UpdateLog": ["Beta release"],
+    "DownloadUrl": "https://example.com/"
+  }
+}

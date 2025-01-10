@@ -1,0 +1,225 @@
+:root {
+  --lantern-red: rgba(216, 0, 15, 0.8);
+  --lantern-gold: #dc8f03;
+  --lantern-orange: #ffa500;
+  --lantern-shadow: rgba(252, 144, 61, 1);
+  --lantern-width: min(120px, 8vw);
+  --lantern-height: min(90px, 6vw);
+  --font-size: min(3.2rem, 2vw);
+  --lantern-spacing: calc(var(--lantern-width) * 0.75);
+  --swing-degree: 10deg;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --lantern-width: min(60px, 15vw);
+    --lantern-height: min(45px, 11vw);
+    --font-size: min(1.8rem, 4vw);
+    --lantern-spacing: calc(var(--lantern-width) * 0.75);
+    --swing-degree: 5deg;
+  }
+}
+
+/* 灯笼容器基础样式 */
+.deng-box0,
+.deng-box1,
+.deng-box2,
+.deng-box3 {
+  position: fixed;
+  pointer-events: none;
+}
+
+.deng-box0 {
+  top: 0px;
+  left: 2%;
+  z-index: 4; /* 最左边的"新"字灯笼层级最高 */
+}
+
+.deng-box1 {
+  top: 0px;
+  left: calc(2% + var(--lantern-spacing));
+  z-index: 3; /* "年"字灯笼层级次之 */
+}
+
+.deng-box2 {
+  top: 0px;
+  right: calc(2% + var(--lantern-spacing));
+  z-index: 2; /* "快"字灯笼层级再次之 */
+}
+
+.deng-box3 {
+  top: 0px;
+  right: 2%;
+  z-index: 1; /* 最右边的"乐"字灯笼层级最低 */
+}
+
+/* 灯笼主体样式 */
+.deng {
+  position: relative;
+  width: var(--lantern-width);
+  height: var(--lantern-height);
+  margin: calc(var(--lantern-height) * 0.2);
+  background: var(--lantern-red);
+  border-radius: 50% 50%;
+  transform-origin: 50% -100px;
+  animation: swing 3s infinite ease-in-out;
+  box-shadow: -5px 5px 30px 4px var(--lantern-shadow);
+}
+
+.deng-box1 .deng,
+.deng-box3 .deng {
+  animation-duration: 5s;
+}
+
+/* 灯笼内部结构 */
+.deng-a,
+.deng-b {
+  background: rgba(216, 0, 15, 0.1);
+  border: 2px solid var(--lantern-gold);
+  border-radius: 50%;
+}
+
+.deng-a {
+  width: calc(var(--lantern-width) * 0.8);
+  height: var(--lantern-height);
+  margin: calc(var(--lantern-height) * 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deng-b {
+  width: calc(var(--lantern-width) * 0.4);
+  height: var(--lantern-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 灯笼装饰元素 */
+.xian {
+  position: absolute;
+  top: calc(var(--lantern-height) * -0.2);
+  left: calc(var(--lantern-width) * 0.5);
+  width: calc(var(--lantern-width) * 0.02);
+  height: calc(var(--lantern-height) * 0.2);
+  background: var(--lantern-gold);
+}
+
+/* 水滴动画元素 */
+.shui-a {
+  position: relative;
+  width: calc(var(--lantern-width) * 0.05);
+  height: calc(var(--lantern-height) * 0.2);
+  margin: calc(var(--lantern-height) * -0.05) 0 0 calc(var(--lantern-width) * 0.5);
+  transform-origin: 50% calc(var(--lantern-height) * -0.5);
+  animation: swing 4s infinite ease-in-out;
+  background: var(--lantern-orange);
+  border-radius: 0 0 5px 5px;
+}
+
+.shui-b {
+  position: absolute;
+  top: calc(var(--lantern-height) * 0.15);
+  left: calc(var(--lantern-width) * -0.02);
+  width: calc(var(--lantern-width) * 0.1);
+  height: calc(var(--lantern-width) * 0.1);
+  background: var(--lantern-gold);
+  border-radius: 50%;
+}
+
+.shui-c {
+  position: absolute;
+  top: calc(var(--lantern-height) * 0.2);
+  left: calc(var(--lantern-width) * -0.02);
+  width: calc(var(--lantern-width) * 0.1);
+  height: calc(var(--lantern-height) * 0.3);
+  background: var(--lantern-orange);
+  border-radius: 0 0 0 5px;
+}
+
+/* 灯笼顶部和底部装饰 */
+.deng:before,
+.deng:after {
+  position: absolute;
+  left: calc(var(--lantern-width) * 0.25);
+  width: calc(var(--lantern-width) * 0.5);
+  height: calc(var(--lantern-height) * 0.1);
+  content: " ";
+  display: block;
+  border: solid 1px var(--lantern-gold);
+  background: linear-gradient(
+    to right,
+    var(--lantern-gold),
+    var(--lantern-orange),
+    var(--lantern-gold),
+    var(--lantern-orange),
+    var(--lantern-gold)
+  );
+}
+
+.deng:before {
+  top: calc(var(--lantern-height) * -0.08);
+  border-radius: 5px 5px 0 0;
+}
+
+.deng:after {
+  bottom: calc(var(--lantern-height) * -0.08);
+  border-radius: 0 0 5px 5px;
+}
+
+/* 文字样式 */
+.deng-t {
+  font-family:
+    "华文行楷",
+    Arial,
+    Lucida Grande,
+    Tahoma,
+    sans-serif;
+  font-size: var(--font-size);
+  color: var(--lantern-gold);
+  font-weight: bold;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* 夜间模式 */
+.night .deng-t,
+.night .deng-box,
+.night .deng-box1,
+.night .deng-box2,
+.night .deng-box3 {
+  background: transparent !important;
+}
+
+.night .deng {
+  box-shadow: none;
+}
+
+.night .deng-a,
+.night .deng-b {
+  border-color: rgba(216, 0, 15, 0.3);
+}
+
+.night .xian,
+.night .shui-a,
+.night .shui-b,
+.night .shui-c,
+.night .deng:before,
+.night .deng:after {
+  opacity: 0.5;
+}
+
+/* 统一动画定义 */
+@keyframes swing {
+  0%,
+  100% {
+    transform: rotate(calc(var(--swing-degree) * -1));
+  }
+  50% {
+    transform: rotate(var(--swing-degree));
+  }
+}

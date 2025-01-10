@@ -1,0 +1,42 @@
+[
+  {
+    "name": "HTML5/CSS3",
+    "progress": 78,
+    "description": "制作网站程度的能力"
+  },
+  {
+    "name": "JavaScript/Typescript",
+    "progress": 55,
+    "description": "使用现代轮子程度的能力"
+  },
+  {
+    "name": "PHP",
+    "progress": 60,
+    "description": "赞美最好的语言程度的能力"
+  },
+  {
+    "name": "数字设计",
+    "progress": 65,
+    "description": "让自己舒服程度的能力"
+  },
+  {
+    "name": "世界",
+    "progress": 20,
+    "description": "观测世界程度的能力"
+  },
+  {
+    "name": "搞事情",
+    "progress": 82,
+    "description": "让事情发生程度的能力"
+  },
+  {
+    "name": "魔法",
+    "progress": 12,
+    "description": "和普通人相同程度的能力"
+  },
+  {
+    "name": "MoePower",
+    "progress": 99,
+    "description": "成为萌二程度的能力"
+  }
+]

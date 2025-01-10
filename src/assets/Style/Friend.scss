@@ -1,0 +1,74 @@
+section {
+  &.PickstarsFriend {
+    .Container {
+      .item {
+        margin: 5px 0;
+        padding: 15px 1.5%;
+        float: left;
+        width: 22%;
+        height: 60px;
+        transition: all 0.2s;
+        opacity: 0.85;
+
+        &:hover {
+          opacity: 1;
+          border-radius: 5px;
+          background-color: hsla(0, 0%, 100%, 0.25);
+          transform: translateY(-5px);
+          box-shadow: 0 3px 20px rgba(0, 0, 0, 0.28);
+          animation: index-link-active 1s cubic-bezier(0.315, 0.605, 0.375, 0.925) forwards;
+        }
+      }
+
+      .item.akarin {
+        opacity: 0.58;
+      }
+
+      .item .avatar {
+        float: left;
+        height: 60px;
+        line-height: 60px;
+        width: 60px;
+        border-radius: 100%;
+        text-align: center;
+        margin-right: 15px;
+        background-color: #353535;
+        overflow: hidden;
+      }
+
+      .item .avatar i {
+        font-size: 24px;
+      }
+
+      .item .avatar img {
+        height: 60px;
+        max-width: 60px;
+        border-radius: 100%;
+      }
+
+      .item .inner {
+        padding: 6px;
+      }
+
+      .item .inner h5 {
+        font-weight: 400;
+        font-size: 17px;
+      }
+
+      .item .inner p {
+        font-size: 13px;
+        color: hsla(0, 0%, 100%, 0.6);
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  section {
+    &.PickstarsFriend {
+      .item {
+        width: -webkit-fill-available !important;
+      }
+    }
+  }
+}
