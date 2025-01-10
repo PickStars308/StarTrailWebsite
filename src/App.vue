@@ -93,7 +93,7 @@ const WebConfig = ref({
 // 请求配置文件
 onMounted(async () => {
   try {
-    const response = await axios.get("/Assets/Data/Json/WebConfig.json");
+    const response = await axios.get("/assets/Data/Json/WebConfig.json");
 
     if (response.data) {
       WebConfig.value = response.data;

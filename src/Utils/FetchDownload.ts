@@ -3,7 +3,7 @@ import { ElNotification } from "element-plus"; // 确保根据您使用的 UI �
 
 export async function FetchDownload(Version: string) {
   try {
-    const response = await axios.get("/Assets/Data/Json/Version.json");
+    const response = await axios.get("/assets/Data/Json/Version.json");
     const jxresponse = response.data;
 
     // 检查主开关

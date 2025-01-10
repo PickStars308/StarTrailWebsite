@@ -19,7 +19,7 @@ const skills = ref<Skill[]>([]); // 指定 skills 的类型为 Skill[]
 // 获取技能数据的函数
 async function fetchSkills() {
   try {
-    const response = await axios.get("/Assets/Data/Json/Skills.json");
+    const response = await axios.get("/assets/Data/Json/Skills.json");
     if (Array.isArray(response.data)) {
       skills.value = response.data;
       userStore.setLoading(false);

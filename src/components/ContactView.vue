@@ -18,7 +18,7 @@ const contacts = ref<Contact[]>([]);
 // 异步获取联系人数据
 const fetchContacts = async () => {
   try {
-    const response = await axios.get("/Assets/Data/Json/Contacts.json"); // 假设 JSON 文件路径
+    const response = await axios.get("/assets/Data/Json/Contacts.json"); // 假设 JSON 文件路径
     if (Array.isArray(response.data)) {
       contacts.value = response.data;
     } else {

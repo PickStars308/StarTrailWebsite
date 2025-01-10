@@ -16,7 +16,7 @@ const friends = ref<Friend[]>([]);
 // 异步获取友人数据
 const fetchFriends = async () => {
   try {
-    const response = await axios.get("/Assets/Data/Json/Friends.json");
+    const response = await axios.get("/assets/Data/Json/Friends.json");
     if (Array.isArray(response.data)) {
       friends.value = response.data;
     } else {
