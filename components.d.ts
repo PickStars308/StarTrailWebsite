@@ -12,6 +12,8 @@ declare module 'vue' {
     FriendsView: typeof import('./src/components/FriendsView.vue')['default']
     Lantern: typeof import('./src/components/Lantern.vue')['default']
     Loading: typeof import('./src/components/Loading.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     Sentence: typeof import('./src/components/Sentence.vue')['default']
     SkillsView: typeof import('./src/components/SkillsView.vue')['default']
     StarTrails: typeof import('./src/components/StarTrails.vue')['default']

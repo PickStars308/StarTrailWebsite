@@ -11,12 +11,18 @@ import "element-plus/dist/index.css";
 import "@/assets/Style/Style.scss";
 import "@/assets/iconfont/iconfont.js";
 
+import router from "./router";
+
 const app = createApp(App);
 
 const pinia = createPinia();
-pinia.use(piniaPluginPersistedstate);
+
+app.use(router);
 
 app.use(pinia);
+
+pinia.use(piniaPluginPersistedstate);
+
 app.use(ElementPlus);
 
 app.mount("#app");
