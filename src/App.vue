@@ -129,11 +129,15 @@ onMounted(async () => {
 
   <Lantern v-if="WebConfig.Lantern.Enable" :lanternStrings="WebConfig.Lantern.String" />
 
+  <NavBar />
+
   <router-view v-slot="{ Component }">
     <transition name="fade">
       <component :is="Component" />
     </transition>
   </router-view>
+
+  <SidebarTool />
 
   <!-- 背景-->
   <StarTrails />

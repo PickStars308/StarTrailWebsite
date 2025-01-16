@@ -9,18 +9,18 @@
     "name": "Mail",
     "link": "mailto:1402832033@qq.com",
     "bgColor": "#F58930",
-    "iconClass": "icon-email"
+    "iconClass": "icon-Email"
   },
   {
     "name": "Weibo",
     "link": "https://weibo.com/u/6620235241",
     "bgColor": "#e6162d",
-    "iconClass": "icon-weibo1"
+    "iconClass": "icon-WeiBo"
   },
   {
     "name": "Bilibili",
     "link": "https://space.bilibili.com/1736196701?spm_id_from=333.1007.0.0",
     "bgColor": "#f9a2a8",
-    "iconClass": "icon-bilibili-line"
+    "iconClass": "icon-BiliBili"
   }
 ]

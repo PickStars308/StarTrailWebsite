@@ -1,5 +1,12 @@
 div {
   &.PickstarsLife {
+    .clear {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 0fr)); // 创建响应式的列布局
+      gap: 20px;  // 设置网格间隙
+    }
+
+
     .item {
       display: inline-block;
       width: 80px;
@@ -9,7 +16,7 @@ div {
       text-align: center;
       transition: 0.2s all;
       position: relative;
-      margin: 10px 20px 10px 0;
+      margin: 10px 0px 10px 0px;
 
       i {
         position: relative;
@@ -71,8 +78,15 @@ div {
 }
 
 @media screen and (max-width: 700px) {
-  section {
+  div {
     &.PickstarsLife {
+
+      .clear {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); // 创建响应式的列布局
+        gap: 20px;  // 设置网格间隙
+      }
+
       .item {
         width: -webkit-fill-available !important;
       }

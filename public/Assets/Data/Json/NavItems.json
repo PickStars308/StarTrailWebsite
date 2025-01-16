@@ -1,0 +1,14 @@
+[
+  {
+    "Use": true,
+    "Name": "首 页",
+    "Link": "#",
+    "Target": ""
+  },
+  {
+    "Use": true,
+    "Name": "监控",
+    "Link": "./Web/SiteStatus/",
+    "Target": "_blank"
+  }
+]
