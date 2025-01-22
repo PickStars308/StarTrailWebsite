@@ -1,20 +1,14 @@
 <template>
   <!-- 返回顶部按钮 -->
 
-  <div class="Sidebar"
-       :class="{'show': isVisible, 'hide': !isVisible}">
-
-    <div
-      class="Item">
+  <div class="Sidebar" :class="{ show: isVisible, hide: !isVisible }">
+    <div class="Item" @click="userStore.setShowDialog(!userStore.getShowDialog);">
       <SvgIcon icon-name="icon-Setting"></SvgIcon>
     </div>
 
-    <div
-      class="Item"
-      @click="scrollToTop">
+    <div class="Item" @click="scrollToTop">
       <SvgIcon icon-name="icon-BackToTop"></SvgIcon>
     </div>
-
   </div>
 </template>
 
@@ -24,7 +18,8 @@
   position: fixed;
   right: 10px;
   bottom: 20px;
-  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s,
+  transform 0.5s;
 
   .Item {
     margin: 10px;
@@ -41,7 +36,6 @@
     cursor: pointer;
   }
 
-
   &.show {
     transform: translateX(0px); // 显示时平移到原位
   }
@@ -50,7 +44,6 @@
     transform: translateX(100px); // 隐藏时平移到右侧
   }
 }
-
 </style>
 
 <script lang="ts" setup>
@@ -83,4 +76,10 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", checkScroll);
 });
+
+import { useMainStore } from "../stores";
+
+const userStore = useMainStore();
+
+
 </script>

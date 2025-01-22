@@ -1,8 +1,6 @@
 section {
   &.DownloadPickstars {
-
     .DownloadList {
-
       .item {
         position: relative;
         float: left;
@@ -14,7 +12,7 @@ section {
         height: 160px;
         background-color: #333;
         border-radius: 10px;
-        transition: .2s all;
+        transition: 0.2s all;
 
         .text {
           position: absolute;
@@ -39,11 +37,10 @@ section {
             top: -20px;
             height: 160px;
             width: 160px;
-            opacity: .05;
+            opacity: 0.05;
           }
 
-
-          .Release  {
+          .Release {
             svg {
               animation: spin-icon 15s linear infinite;
             }
@@ -60,9 +57,7 @@ section {
               animation: spin-icon 15s linear infinite;
             }
           }
-
         }
-
 
         &:hover {
           transform: translateY(-5px);
@@ -70,8 +65,6 @@ section {
         }
       }
     }
-
-
   }
 }
 
