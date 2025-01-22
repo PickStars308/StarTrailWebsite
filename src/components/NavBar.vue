@@ -3,7 +3,7 @@
     <div
       v-for="item in navItems"
       :key="item.Name"
-      :class="{'disabled': !item.Use}"
+      :class="{ disabled: !item.Use }"
       @click="handleNavClick(item)"
     >
       <a v-if="item.Use" :href="item.Link" :target="item.Target">{{ item.Name }}</a>
@@ -68,6 +68,4 @@ const handleNavClick = (item: NavItem) => {
 };
 </script>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

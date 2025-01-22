@@ -13,11 +13,15 @@ import "@/assets/iconfont/iconfont.js";
 
 import router from "./router";
 
+import i18n from "./Lang"; //引入国际化
+
 const app = createApp(App);
 
 const pinia = createPinia();
 
 app.use(router);
+
+app.use(i18n);
 
 app.use(pinia);
 
