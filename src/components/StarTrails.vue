@@ -109,8 +109,6 @@ onMounted(() => {
     showContext.fillRect(0, 0, showWidth, showHeight);
   });
 });
-
-
 </script>
 
 <template>

@@ -6,8 +6,9 @@
 
 body,
 html {
-  font-family: Microsoft YaHei,
-  serif;
+  font-family:
+    Microsoft YaHei,
+    serif;
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
   min-width: 1150px;
@@ -126,20 +127,17 @@ nav {
     color: rgb(255 255 255);
 
     a {
-
-      letter-spacing: .1em;
+      letter-spacing: 0.1em;
       color: rgb(255 255 255);
-      opacity: .75;
+      opacity: 0.75;
       text-decoration: none;
     }
-
 
     a.active,
     a:hover {
       opacity: 1;
     }
   }
-
 }
 
 /* 主布局 */
@@ -237,21 +235,6 @@ section {
     left: 0;
     top: 75px;
     margin: -40% auto 0;
-  }
-
-  nav {
-    padding: 15px 5%;
-    overflow: auto;
-    font-size: 13px;
-    left: 0;
-    top: inherit;
-    bottom: 0;
-    transform: rotate(0deg) translateZ(0);
-    transform-origin: 0 100%;
-    white-space: nowrap;
-    width: 90%;
-    background: -webkit-linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8));
-    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8));
   }
 
   section {

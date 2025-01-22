@@ -18,25 +18,17 @@ console.info(
   Github：https://github.com/PickStars308
   网站：https://xinstudio.top
 
-%c
-  当前开发环境：${import.meta.env.NODE_ENV}
 `,
   "font-size: 20px;font-weight: 600;color: #000000;",
   "font-size:12px;color: #000000;",
   "font-size:12px;color: #000000;",
-  "font-size:12px;color: #000000;",
 );
+
 </script>
 
 <script setup lang="ts">
 import StarTrails from "./components/StarTrails.vue";
 import Lantern from "./components/Lantern.vue";
-
-import Sentence from "./components/Sentence.vue";
-import ContactView from "./components/ContactView.vue";
-import SkillsView from "./components/SkillsView.vue";
-import FooterView from "./components/FooterView.vue";
-import FriendsView from "./components/FriendsView.vue";
 
 import Loading from "./components/Loading.vue";
 
@@ -44,8 +36,6 @@ import { ref, onMounted } from "vue";
 import axios from "axios";
 
 import { ElNotification } from "element-plus";
-
-import { FetchDownload } from "./Utils/FetchDownload";
 
 import { useMainStore } from "./stores";
 
@@ -89,6 +79,7 @@ const WebConfig = ref({
     String: "",
   },
 });
+
 
 // 请求配置文件
 onMounted(async () => {
@@ -141,6 +132,8 @@ onMounted(async () => {
 
   <!-- 背景-->
   <StarTrails />
+
+  <DialogView />
 </template>
 
 <style lang="scss">
