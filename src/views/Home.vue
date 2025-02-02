@@ -191,7 +191,6 @@
 
     <!-- 底部 -->
     <FooterView />
-
   </main>
 </template>
 
@@ -207,6 +206,5 @@ import Sentence from "../components/Sentence.vue";
 import FriendsView from "../components/FriendsView.vue";
 import SkillsView from "../components/SkillsView.vue";
 </script>
-
 
 <style scoped lang="scss"></style>

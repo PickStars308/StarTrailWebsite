@@ -2,7 +2,7 @@
   <!-- 返回顶部按钮 -->
 
   <div class="Sidebar" :class="{ show: isVisible, hide: !isVisible }">
-    <div class="Item" @click="userStore.setShowDialog(!userStore.getShowDialog);">
+    <div class="Item" @click="userStore.setShowDialog(!userStore.getShowDialog)">
       <SvgIcon icon-name="icon-Setting"></SvgIcon>
     </div>
 
@@ -18,8 +18,9 @@
   position: fixed;
   right: 10px;
   bottom: 20px;
-  transition: opacity 0.5s,
-  transform 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
 
   .Item {
     margin: 10px;
@@ -80,6 +81,4 @@ onBeforeUnmount(() => {
 import { useMainStore } from "../stores";
 
 const userStore = useMainStore();
-
-
 </script>

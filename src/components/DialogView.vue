@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="DialogOut"
-    v-if="dialogVisible"
-    @click.self="startCloseDialog"
-  >
+  <div class="DialogOut" v-if="dialogVisible" @click.self="startCloseDialog">
     <div :class="['DialogView', { 'fade-out': isClosing }]">
       <div class="dialog-header">
         <h3>{{ $t("Settings.Setting") }}</h3>
@@ -12,13 +8,17 @@
 
       <div class="LanguageSet">
         <h3>{{ $t("Settings.LanguageSetting") }}</h3>
-        <el-select v-model="selectedLanguage" placeholder="Select Language" class="language-dropdown">
+        <el-select
+          v-model="selectedLanguage"
+          placeholder="Select Language"
+          class="language-dropdown"
+        >
           <el-option label="English" value="EnUs"></el-option>
           <el-option label="中文" value="ZhCN"></el-option>
         </el-select>
       </div>
-      <p>Selected Language: {{ selectedLanguageLabel }}</p> <!-- Display the selected language -->
-
+      <p>Selected Language: {{ selectedLanguageLabel }}</p>
+      <!-- Display the selected language -->
     </div>
   </div>
 </template>
@@ -39,13 +39,15 @@ const selectedLanguage = ref(localStorage.getItem("SelectedLanguage") || "EnUs")
 const isClosing = ref(false); // Track if dialog is closing
 
 // Watch for changes to dialog visibility
-watch(() => store.getShowDialog, (newValue) => {
-  dialogVisible.value = newValue;
-  if (newValue) {
-    isClosing.value = false; // Reset closing state when opening the dialog
-  }
-});
-
+watch(
+  () => store.getShowDialog,
+  (newValue) => {
+    dialogVisible.value = newValue;
+    if (newValue) {
+      isClosing.value = false; // Reset closing state when opening the dialog
+    }
+  },
+);
 
 // Start the close dialog process (trigger fade-out animation)
 const startCloseDialog = () => {
@@ -60,15 +62,12 @@ const startCloseDialog = () => {
 const { locale } = useI18n();
 
 const selectedLanguageLabel = computed(() => {
-
   store.setLanguage(selectedLanguage.value);
 
   locale.value = selectedLanguage.value;
 
   return selectedLanguage.value === "EnUs" ? "English" : "中文";
 });
-
-
 </script>
 
 <style lang="scss">
@@ -127,7 +126,6 @@ const selectedLanguageLabel = computed(() => {
       }
     }
   }
-
 }
 
 /* Fade-in effect */

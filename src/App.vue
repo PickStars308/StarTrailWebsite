@@ -23,7 +23,6 @@ console.info(
   "font-size:12px;color: #000000;",
   "font-size:12px;color: #000000;",
 );
-
 </script>
 
 <script setup lang="ts">
@@ -79,7 +78,6 @@ const WebConfig = ref({
     String: "",
   },
 });
-
 
 // 请求配置文件
 onMounted(async () => {
