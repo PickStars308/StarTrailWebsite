@@ -37,7 +37,13 @@ export default ({ mode }: { mode: string }) =>
       },
     },
     plugins: [
-      vue(),
+      vue({
+        template: {
+          compilerOptions: {
+            isCustomElement: (tag) => tag === "P", // 将 P 视为原生自定义元素
+          },
+        },
+      }),
       AutoImport({
         resolvers: [ElementPlusResolver()],
       }),
