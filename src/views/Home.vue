@@ -13,7 +13,7 @@
                 <div class="bg-yellow" />
                 <div class="bg-green" />
               </div>
-              <div class="TextWhite" v-text="$t('Home.AboutPickstars')"></div>
+              <div class="TextWhite">{{ $t("Home.AboutPickstars") }}</div>
             </div>
           </div>
         </div>
@@ -22,7 +22,7 @@
     <!-- 关于摘星辰 -->
     <section class="AboutPickstars">
       <div class="Container">
-        <h2 class="ChTitle">Who am <span v-text="$t('Home.Pickstars')"></span>？</h2>
+        <h2 class="ChTitle">Who am <span>{{ $t("Home.Pickstars") }}</span>？</h2>
         <div class="Clear">
           <div class="Introduct">
             <div class="AboutMe">

@@ -10,22 +10,23 @@ export const useMainStore = defineStore("main", {
   actions: {
     setLanguage(language: string) {
       localStorage.setItem("SelectedLanguage", language);
-      this.$state.Locales = language;
+      this.Locales = language; // 直接修改 state，无需使用 this.$state
     },
     setLoading(isLoading: boolean) {
-      this.$state.isLoading = isLoading;
+      this.isLoading = isLoading; // 直接修改 state
     },
     setShowBackGroundError(isShowBackGroundError: boolean) {
-      this.$state.isShowBackGroundError = isShowBackGroundError;
+      this.isShowBackGroundError = isShowBackGroundError; // 直接修改 state
     },
     setShowDialog(ShowDialog: boolean) {
-      this.$state.ShowDialog = ShowDialog;
+      this.ShowDialog = ShowDialog; // 直接修改 state
     },
   },
   getters: {
+    // 重命名 getter，避免与 state 属性冲突
+    getIsLoading: (state) => state.isLoading,
     getLanguage: (state) => state.Locales,
-    isLoading: (state) => state.isLoading,
-    currentLanguage: (state) => state.Locales,
+    getCurrentLanguage: (state) => state.Locales, // 重命名以避免重复
     getShowDialog: (state) => state.ShowDialog,
   },
 });

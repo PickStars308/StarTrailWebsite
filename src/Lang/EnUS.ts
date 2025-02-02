@@ -10,18 +10,22 @@ export default {
   Settings: {
     Setting: "Setting",
     LanguageSetting: "Language Setting",
-    Theme: "主题",
-    Dark: "深色",
-    Light: "浅色",
-    System: "跟随系统",
-    Version: "版本",
-    About: "关于",
-    LogOut: "退出登录",
-    restore: "还原数据",
-    Home: "首页",
-    SystemManagement: "系统管理",
-    OrganizationalManagement: "机构管理",
-    UserManagement: "用户管理",
-    RoleManagement: "角色管理",
+    SelectedLanguage: "Selected Language：",
   },
+  Layout: {
+    Heaer: {
+
+    },
+    Body: {
+
+    },
+    Footer: {
+      Pickstars: "Pickstars",
+      PoweredByText: "This site is powered by",
+      VueViteLink: "Vue + Vite",
+      ElementPlusLink: "Element Plus",
+      OriginalProjectText: "The project was developed independently, and its background components are referenced from",
+      ModifiedFromText: "originally created by",
+    }
+  }
 };
