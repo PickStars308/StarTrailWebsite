@@ -6,6 +6,11 @@ This is a static personal homepage built with **Vue 3**, **TypeScript**, and **V
 
 English | [简体中文](README-CN.md)
 
+## Branch
+[Master](https://github.com/PickStars308/StarTrailWebsite/tree/master) : The main branch, which contains the latest stable version of the project.
+
+[Dev](https://github.com/PickStars308/StarTrailWebsite/tree/dev) : The development branch, which contains the latest development version of the project.
+
 ## Tech Stack
 
 - **Vue 3**: A modern JavaScript framework for building user interfaces.
@@ -17,7 +22,7 @@ English | [简体中文](README-CN.md)
 
 ### V1.0
 
-![Preview Image](./Preview/1.0.png 'Preview Image')
+![Preview Image](https://gh.api.99988866.xyz/https://github.com/PickStars308/StarTrailWebsite/blob/master/Preview/1.0.png 'Preview Image')
 
 ## Instructions
 
