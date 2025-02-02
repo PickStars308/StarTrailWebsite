@@ -6,6 +6,11 @@
 
 [English](README.md) | 简体中文
 
+## 分支
+[主分支](https://github.com/PickStars308/StarTrailWebsite/tree/master) ：包含项目最新稳定版本的主分支。
+
+[Dev](https://github.com/PickStars308/StarTrailWebsite/tree/dev) ：开发分支，包含项目的最新开发版本。
+
 ## 技术栈
 
 - **Vue 3**: 现代化的 JavaScript 框架，用于构建用户界面。
