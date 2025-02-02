@@ -17,10 +17,7 @@
 
 ### V1.0
 
-![Preview Image](https://gh.api.99988866.xyz/https://github.com/PickStars308/StarTrailWebsite/blob/master/Preview/1.0.png 'Preview Image')
-### V2.0
-
-![Preview Image](https://gh.api.99988866.xyz/https://github.com/PickStars308/StarTrailWebsite/blob/master/Preview/2.0.png 'Preview Image')
+![Preview Image](./Preview/1.0.png 'Preview Image')
 
 ## 使用说明
 
@@ -67,6 +64,6 @@ public/assets/Data/Json/
 
 本项目使用 MIT 许可证，你可以在 [LICENSE](LICENSE) 文件中找到完整的许可证文本。
 
-## 鸣谢
+## 申明
 
-感谢 **sun0225SUN** 的 [star-trail](https://github.com/sun0225SUN/star-trail) 项目提供 StarTrails.vue 组件
+原始项目由 **sun0225SUN** 发布，修改自[star-trail](https://github.com/sun0225SUN/star-trail)。
