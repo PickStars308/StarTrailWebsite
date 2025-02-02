@@ -71,4 +71,4 @@ This project is licensed under the MIT License. You can find the full license te
 
 ## Acknowledgment
 
-The original project was released by **sun0225SUN**, modified from [star-trail](https://github.com/sun0225SUN/star-trail).
+Thanks to **sun0225SUN** for the [star-trail](https://github.com/sun0225SUN/star-trail) project, which provides the StarTrails.vue component.
