@@ -17,6 +17,7 @@ declare module 'vue' {
     Lantern: typeof import('./src/components/Lantern.vue')['default']
     Loading: typeof import('./src/components/Loading.vue')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
+    ProfileView: typeof import('./src/components/ProfileView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Sentence: typeof import('./src/components/Sentence.vue')['default']

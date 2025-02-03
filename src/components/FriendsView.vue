@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import axios from "axios";
-import { ref, onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import { ElNotification } from "element-plus";
 
 // 定义友人数据类型
 interface Friend {
-  name: string;
-  description: string;
-  avatar: string;
+  Name: string;
+  Description: string;
+  Avatar: string;
 }
 
 // 定义响应式数据
@@ -43,15 +43,15 @@ onMounted(() => {
 
 <template>
   <div class="clear">
-    <a v-for="friend in friends" :key="friend.name" href="#" target="_blank">
+    <a v-for="friend in friends" :key="friend.Name" href="#" target="_blank">
       <div class="item">
         <div class="avatar">
-          <img :src="friend.avatar" />
+          <img :src="friend.Avatar" />
           <!-- 使用 :src 进行动态绑定 -->
         </div>
         <div class="inner">
-          <h5>{{ friend.name }}</h5>
-          <p>{{ friend.description }}</p>
+          <h5 v-html="friend.Name"></h5>
+          <p>{{ friend.Description }}</p>
         </div>
       </div>
     </a>
