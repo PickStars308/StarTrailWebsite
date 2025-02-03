@@ -2,15 +2,15 @@ section {
   &.PickstarsFriend {
     .Container {
       .item {
-        margin: 5px 0;
-        padding: 15px 1.5%;
+        margin: 5px 0.5%;
+        padding: 15px 1%;
         float: left;
         width: 22%;
         height: 60px;
         transition: all 0.2s;
         opacity: 0.85;
         border-radius: 5px;
-        background-color: hsl(0deg 0% 100% / 10%);
+        background-color: hsla(0, 0%, 100%, 0.1);
 
         &:hover {
           opacity: 1;

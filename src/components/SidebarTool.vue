@@ -9,6 +9,12 @@
     <div class="Item" @click="scrollToTop">
       <SvgIcon icon-name="icon-BackToTop"></SvgIcon>
     </div>
+
+    <a href="https://github.com/PickStars308/StarTrailWebsite" target="_blank" class="Item">
+
+      <div class="Item">
+        <SvgIcon icon-name="icon-Github"></SvgIcon>
+      </div>    </a>
   </div>
 </template>
 
