@@ -17,16 +17,14 @@
           <el-option label="中文" value="ZhCN"></el-option>
         </el-select>
       </div>
-      <p>Selected Language: {{ selectedLanguageLabel }}</p>
+      <p>{{ $t("Settings.SelectedLanguage") }}{{ selectedLanguageLabel }}</p>
       <!-- Display the selected language -->
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { nextTick } from "vue";
-
-import { ref, watch, computed } from "vue";
+import { computed, ref, watch } from "vue";
 
 import { useMainStore } from "../stores";
 import { useI18n } from "vue-i18n";
@@ -36,27 +34,24 @@ const dialogVisible = ref(store.getShowDialog);
 
 const selectedLanguage = ref(localStorage.getItem("SelectedLanguage") || "EnUs");
 
-const isClosing = ref(false); // Track if dialog is closing
+const isClosing = ref(false);
 
-// Watch for changes to dialog visibility
 watch(
   () => store.getShowDialog,
   (newValue) => {
     dialogVisible.value = newValue;
     if (newValue) {
-      isClosing.value = false; // Reset closing state when opening the dialog
+      isClosing.value = false;
     }
   },
 );
 
-// Start the close dialog process (trigger fade-out animation)
 const startCloseDialog = () => {
   isClosing.value = true;
-  // Wait for the fade-out animation to finish before hiding the dialog
   setTimeout(() => {
     dialogVisible.value = false;
-    store.setShowDialog(false); // Assuming you have a setter in your store
-  }, 300); // Duration of the fade-out animation (0.3s)
+    store.setShowDialog(false);
+  }, 300);
 };
 
 const { locale } = useI18n();
@@ -110,6 +105,7 @@ const selectedLanguageLabel = computed(() => {
 
       .close-btn {
         background: none;
+        color: #ffffff;
         border: none;
         font-size: 1.5em;
         cursor: pointer;

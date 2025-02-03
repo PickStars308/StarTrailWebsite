@@ -16,6 +16,10 @@ const i18n = createI18n({
     EnUS: en, // 标识:配置对象
     ZhCN: zh,
   },
+  silentTranslationWarn: true,
+  missingWarn: false,
+  silentFallbackWarn: true,
+  fallbackWarn: false,
 });
 
 export default i18n;

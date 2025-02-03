@@ -9,6 +9,12 @@
     <div class="Item" @click="scrollToTop">
       <SvgIcon icon-name="icon-BackToTop"></SvgIcon>
     </div>
+
+    <a class="Item" href="https://github.com/PickStars308/StarTrailWebsite" target="_blank">
+      <div class="Item">
+        <SvgIcon icon-name="icon-Github"></SvgIcon>
+      </div>
+    </a>
   </div>
 </template>
 
@@ -48,7 +54,8 @@
 </style>
 
 <script lang="ts" setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { onBeforeUnmount, onMounted, ref } from "vue";
+import { useMainStore } from "../stores";
 
 const isVisible = ref(false);
 
@@ -77,8 +84,6 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", checkScroll);
 });
-
-import { useMainStore } from "../stores";
 
 const userStore = useMainStore();
 </script>

@@ -1,13 +1,13 @@
 [
   {
     "Use": true,
-    "Name": "首 页",
+    "Name": "Layout.Home",
     "Link": "#",
     "Target": ""
   },
   {
     "Use": true,
-    "Name": "监控",
+    "Name": "Layout.Monitoring",
     "Link": "./Web/SiteStatus/",
     "Target": "_blank"
   }

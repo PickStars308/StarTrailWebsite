@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 // 定义响应式数据
 const currentYear = ref(new Date().getFullYear());
-const author = ref("摘星辰");
-const icpNumber = ref(""); // 你可以根据需求设置icpNumber值
+const icpNumber = ref("");
+
+if (import.meta.env.VITE_SITE_ICP) {
+  icpNumber.value = import.meta.env.VITE_SITE_ICP;
+}
 </script>
 
 <template>
@@ -12,28 +18,29 @@ const icpNumber = ref(""); // 你可以根据需求设置icpNumber值
     <div style="text-align: center">
       <p>
         <span
-          >2022 - {{ currentYear }} © {{ author }}
+          >2022 - {{ currentYear }} © {{ t("Layout.Footer.Pickstars") }}
           <span v-if="icpNumber"> | {{ icpNumber }} </span></span
         >
       </p>
+
       <span class="link">
-        本站由
-        <a href="https://cn.vuejs.org/" title="Vuejs官网" alt="Vuejs官网" target="_blank"
-          >Vue + Vite</a
-        >
-        强力驱动丨搭配
+        {{ t("Layout.Footer.PoweredByText") }}
+        <a alt="Vuejs官网" href="https://cn.vuejs.org/" target="_blank" title="Vuejs官网">{{
+          t("Layout.Footer.VueViteLink")
+        }}</a>
+        {{ t("Layout.Footer.PoweredByText") }}丨
         <a
           href="https://element-plus.org/"
           title="Element Plus官网"
           alt="Element Plus官网"
           target="_blank"
-          >Element Plus</a
+          >{{ t("Layout.Footer.ElementPlusLink") }}</a
         >
         <p>
-          原始项目由
-          <a href="https://github.com/sun0225SUN/star-trail" target="_blank">sun0225SUN</a>
-          发布，修改自
+          {{ t("Layout.Footer.OriginalProjectText") }}
           <a href="https://github.com/sun0225SUN/star-trail" target="_blank">star-trail</a>
+          {{ t("Layout.Footer.ModifiedFromText") }}
+          <a href="https://github.com/sun0225SUN" target="_blank">sun0225SUN</a>,
         </p>
       </span>
     </div>
