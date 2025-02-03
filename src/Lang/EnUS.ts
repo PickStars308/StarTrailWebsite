@@ -13,6 +13,10 @@ export default {
     SelectedLanguage: "Selected Language：",
   },
   Layout: {
+    Home: "Home",
+    Monitoring: "Monitor",
+
+
     Heaer: {
 
     },

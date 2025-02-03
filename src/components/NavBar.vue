@@ -6,9 +6,9 @@
       :class="{ disabled: !item.Use }"
       @click="handleNavClick(item)"
     >
-      <a v-if="item.Use" :href="item.Link" :target="item.Target">{{ item.Name }}</a>
+      <a v-if="item.Use" :href="item.Link" :target="item.Target">{{ $t(item.Name) }}</a>
 
-      <a v-else :target="item.Target">{{ item.Name }}</a>
+      <a v-else :target="item.Target">{{ $t(item.Name) }}</a>
     </div>
   </nav>
 </template>
@@ -17,6 +17,8 @@
 import { ref, onMounted } from "vue";
 import axios from "axios";
 import { ElNotification } from "element-plus";
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 
 // 定义导航项数据类型
 interface NavItem {

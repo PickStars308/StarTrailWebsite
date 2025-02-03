@@ -13,6 +13,9 @@ export default {
     SelectedLanguage: "所选语言：",
   },
   Layout: {
+    Home: "首 页",
+    Monitoring: "监 控",
+
     Heaer: {
 
     },
