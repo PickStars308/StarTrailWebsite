@@ -19,6 +19,10 @@ English | [简体中文](README-CN.md)
 
 ![Preview Image](https://gh.api.99988866.xyz/https://github.com/PickStars308/StarTrailWebsite/blob/master/Preview/1.0.png 'Preview Image')
 
+### V2.0
+
+![Preview Image](https://gh.api.99988866.xyz/https://github.com/PickStars308/StarTrailWebsite/blob/master/Preview/2.0.png 'Preview Image')
+
 ## Instructions
 
 ### Clone the project to your local machine:
