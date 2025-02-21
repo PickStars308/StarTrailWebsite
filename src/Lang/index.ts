@@ -11,10 +11,10 @@ const i18n = createI18n({
   locale: defaultLocale, // 默认语言
   fallbackLocale: "EnUS", // 不存在默认则为英文
   legacy: false,
-  globalInjection: true,  // 全局模式，可以直接使用 $t
+  globalInjection: true, // 全局模式，可以直接使用 $t
   messages: {
-    "EnUS": en, // 标识:配置对象
-    "ZhCN": zh,
+    EnUS: en, // 标识:配置对象
+    ZhCN: zh,
   },
   silentTranslationWarn: true,
   missingWarn: false,

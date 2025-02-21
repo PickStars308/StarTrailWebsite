@@ -16,20 +16,16 @@ export default {
     Home: "Home",
     Monitoring: "Monitor",
 
-
-    Heaer: {
-
-    },
-    Body: {
-
-    },
+    Heaer: {},
+    Body: {},
     Footer: {
       Pickstars: "Pickstars",
       PoweredByText: "This site is powered by",
       VueViteLink: "Vue + Vite",
       ElementPlusLink: "Element Plus",
-      OriginalProjectText: "The project was developed independently, and its background components are referenced from",
+      OriginalProjectText:
+        "The project was developed independently, and its background components are referenced from",
       ModifiedFromText: "originally created by",
-    }
-  }
+    },
+  },
 };

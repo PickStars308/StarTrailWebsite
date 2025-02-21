@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import axios from "axios";
-import { ref, onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import { ElNotification } from "element-plus";
 
 // 定义友人数据类型
@@ -50,7 +50,7 @@ onMounted(() => {
           <!-- 使用 :src 进行动态绑定 -->
         </div>
         <div class="inner">
-          <h5 v-html='friend.Name'></h5>
+          <h5 v-html="friend.Name"></h5>
           <p>{{ friend.Description }}</p>
         </div>
       </div>

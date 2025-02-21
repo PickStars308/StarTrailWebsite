@@ -22,7 +22,10 @@
     <!-- 关于摘星辰 -->
     <section class="AboutPickstars">
       <div class="Container">
-        <h2 class="ChTitle">Who am <span>{{ $t("Home.Pickstars") }}</span>？</h2>
+        <h2 class="ChTitle">
+          Who am <span>{{ $t("Home.Pickstars") }}</span
+          >？
+        </h2>
         <div class="Clear">
           <div class="Introduct">
             <ProfileView />
@@ -177,22 +180,19 @@
 
     <!-- 底部 -->
     <FooterView />
-
   </main>
 </template>
 
 <script setup lang="ts">
 import { useMainStore } from "../stores";
-
-const userStore = useMainStore();
-
 import { FetchDownload } from "../Utils/FetchDownload";
 import FooterView from "../components/FooterView.vue";
 import ContactView from "../components/ContactView.vue";
 import Sentence from "../components/Sentence.vue";
 import FriendsView from "../components/FriendsView.vue";
 import SkillsView from "../components/SkillsView.vue";
-</script>
 
+const userStore = useMainStore();
+</script>
 
 <style scoped lang="scss"></style>

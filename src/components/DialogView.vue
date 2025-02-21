@@ -1,35 +1,35 @@
 <template>
-  <div
-    class="DialogOut"
-    v-if="dialogVisible"
-    @click.self="startCloseDialog"
-  >
-    <div :class="['DialogView', { 'fade-out': isClosing }]">
+  <div v-if="dialogVisible" class="DialogOut" @click.self="startCloseDialog">
+    <div :class="['DialogView', { 'fade-out': isClosing }]" @wheel.prevent>
       <div class="dialog-header">
-        <h3>{{ $t("Settings.Setting") }}</h3>
+        <h3>{{ t("Settings.Setting") }}</h3>
         <el-button @click="startCloseDialog" class="close-btn">X</el-button>
       </div>
 
       <div class="LanguageSet">
-        <h3>{{ $t("Settings.LanguageSetting") }}</h3>
-        <el-select v-model="selectedLanguage" placeholder="Select Language" class="language-dropdown">
+        <h3>{{ t("Settings.LanguageSetting") }}</h3>
+        <el-select
+          v-model="selectedLanguage"
+          class="language-dropdown"
+          placeholder="Select Language"
+        >
           <el-option label="English" value="EnUs"></el-option>
           <el-option label="中文" value="ZhCN"></el-option>
         </el-select>
       </div>
-      <p>{{ $t("Settings.SelectedLanguage")}}{{ selectedLanguageLabel }}</p> <!-- Display the selected language -->
-
+      <p>{{ t("Settings.SelectedLanguage") }}{{ selectedLanguageLabel }}</p>
+      <!-- Display the selected language -->
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { nextTick } from "vue";
-
-import { ref, watch, computed } from "vue";
+import { computed, ref, watch } from "vue";
 
 import { useMainStore } from "../stores";
 import { useI18n } from "vue-i18n";
+
+const { t } = useI18n(); // 解构出t方法
 
 const store = useMainStore();
 const dialogVisible = ref(store.getShowDialog);
@@ -38,18 +38,27 @@ const selectedLanguage = ref(localStorage.getItem("SelectedLanguage") || "EnUs")
 
 const isClosing = ref(false);
 
-watch(() => store.getShowDialog, (newValue) => {
-  dialogVisible.value = newValue;
-  if (newValue) {
-    isClosing.value = false;
-  }
-});
+watch(
+  () => store.getShowDialog,
+  (newValue) => {
+    dialogVisible.value = newValue;
+    if (newValue) {
+      isClosing.value = false;
 
+      // 禁用鼠标滚动
+      document.documentElement.style.overflow = "hidden";
+    }
+  },
+);
 
 const startCloseDialog = () => {
   isClosing.value = true;
+
+  document.documentElement.style.overflow = "scroll";
+
   setTimeout(() => {
     dialogVisible.value = false;
+
     store.setShowDialog(false);
   }, 300);
 };
@@ -57,18 +66,15 @@ const startCloseDialog = () => {
 const { locale } = useI18n();
 
 const selectedLanguageLabel = computed(() => {
-
   store.setLanguage(selectedLanguage.value);
 
   locale.value = selectedLanguage.value;
 
   return selectedLanguage.value === "EnUs" ? "English" : "中文";
 });
-
-
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .DialogOut {
   position: fixed;
   top: 0;
@@ -125,7 +131,6 @@ const selectedLanguageLabel = computed(() => {
       }
     }
   }
-
 }
 
 /* Fade-in effect */

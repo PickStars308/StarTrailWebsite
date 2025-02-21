@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { useI18n } from 'vue-i18n';
+import { useI18n } from "vue-i18n";
+
 const { t } = useI18n();
 
 // 定义响应式数据
 const currentYear = ref(new Date().getFullYear());
-const icpNumber = ref('');
+const icpNumber = ref("");
 
 if (import.meta.env.VITE_SITE_ICP) {
   icpNumber.value = import.meta.env.VITE_SITE_ICP;
 }
-
 </script>
 
 <template>
@@ -18,23 +18,23 @@ if (import.meta.env.VITE_SITE_ICP) {
     <div style="text-align: center">
       <p>
         <span
-        >2022 - {{ currentYear }} © {{ t("Layout.Footer.Pickstars") }}
+          >2022 - {{ currentYear }} © {{ t("Layout.Footer.Pickstars") }}
           <span v-if="icpNumber"> | {{ icpNumber }} </span></span
         >
       </p>
 
       <span class="link">
         {{ t("Layout.Footer.PoweredByText") }}
-        <a href="https://cn.vuejs.org/" title="Vuejs官网" alt="Vuejs官网" target="_blank"
-        >{{ t("Layout.Footer.VueViteLink") }}</a
-        >
+        <a alt="Vuejs官网" href="https://cn.vuejs.org/" target="_blank" title="Vuejs官网">{{
+          t("Layout.Footer.VueViteLink")
+        }}</a>
         {{ t("Layout.Footer.PoweredByText") }}丨
         <a
           href="https://element-plus.org/"
           title="Element Plus官网"
           alt="Element Plus官网"
           target="_blank"
-        >{{ t("Layout.Footer.ElementPlusLink") }}</a
+          >{{ t("Layout.Footer.ElementPlusLink") }}</a
         >
         <p>
           {{ t("Layout.Footer.OriginalProjectText") }}

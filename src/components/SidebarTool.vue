@@ -2,7 +2,7 @@
   <!-- 返回顶部按钮 -->
 
   <div class="Sidebar" :class="{ show: isVisible, hide: !isVisible }">
-    <div class="Item" @click="userStore.setShowDialog(!userStore.getShowDialog);">
+    <div class="Item" @click="userStore.setShowDialog(!userStore.getShowDialog)">
       <SvgIcon icon-name="icon-Setting"></SvgIcon>
     </div>
 
@@ -11,10 +11,10 @@
     </div>
 
     <a href="https://github.com/PickStars308/StarTrailWebsite" target="_blank" class="Item">
-
       <div class="Item">
         <SvgIcon icon-name="icon-Github"></SvgIcon>
-      </div>    </a>
+      </div>
+    </a>
   </div>
 </template>
 
@@ -24,8 +24,9 @@
   position: fixed;
   right: 10px;
   bottom: 20px;
-  transition: opacity 0.5s,
-  transform 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
 
   .Item {
     margin: 10px;
@@ -53,7 +54,8 @@
 </style>
 
 <script lang="ts" setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { onBeforeUnmount, onMounted, ref } from "vue";
+import { useMainStore } from "../stores";
 
 const isVisible = ref(false);
 
@@ -83,9 +85,5 @@ onBeforeUnmount(() => {
   window.removeEventListener("scroll", checkScroll);
 });
 
-import { useMainStore } from "../stores";
-
 const userStore = useMainStore();
-
-
 </script>

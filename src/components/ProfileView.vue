@@ -16,7 +16,7 @@
 
 <script lang="ts" setup>
 import axios from "axios";
-import { ref, onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import { ElNotification } from "element-plus";
 
 // 定义数据类型
@@ -57,9 +57,7 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-
 .AboutMe {
-
   font-size: 17px;
 
   .ProfileItem {
@@ -68,14 +66,11 @@ onMounted(() => {
     line-height: 2.2;
 
     .Zh {
-
     }
 
     .En {
       font-size: 14px;
-
     }
-
   }
 
   .ProfileItem :deep(b) {
@@ -85,7 +80,5 @@ onMounted(() => {
     padding: 5px 1%;
     margin: 5px;
   }
-
 }
-
 </style>

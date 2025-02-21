@@ -22,7 +22,7 @@
 
 ### V1.0
 
-![Preview Image](./Preview/1.0.png 'Preview Image')
+![Preview Image](https://gh.bbxss.com/https://github.com/PickStars308/StarTrailWebsite/blob/master/Preview/1.0.png 'Preview Image')
 
 ## 使用说明
 

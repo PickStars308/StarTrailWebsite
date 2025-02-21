@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 
-import App from "./App.vue"; // 找不到模块“./app.vue”或其相应的类型声明
+import App from "./App.vue";
 
 import { createPinia } from "pinia";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
