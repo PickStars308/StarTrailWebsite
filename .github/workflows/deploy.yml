@@ -35,29 +35,15 @@ jobs:
 
       - name: Zip the dist directory
         run: |
-          zip -r website-build.zip dist
-
-      - name: Upload build output as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: Website
-          path: website-build/Website.zip
-
-  release:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: List files in the root directory for debugging
-        run: ls -R
+          zip -r ./website-build.zip ./dist
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: website-build/*.zip
           token: ${{ secrets.RELEASE_TOKEN }}
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
+          draft: false
           prerelease: false
+          files: |
+            ./website-build.zip
