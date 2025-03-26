@@ -13,7 +13,7 @@ export default ({ mode }: { mode: string }) =>
   defineConfig({
 
     build: {
-      target: 'esnext',
+      target: "esnext",
       chunkSizeWarningLimit: 1500,
       minify: "terser",
       terserOptions: {
@@ -53,20 +53,20 @@ export default ({ mode }: { mode: string }) =>
         resolvers: [ElementPlusResolver()],
       }),
       VitePWA({
-        registerType: "autoUpdate",
+        registerType: "autoUpdate", // 自动更新 Service Worker
         workbox: {
-          skipWaiting: true,
-          clientsClaim: true,
+          skipWaiting: true,  // 强制 Service Worker 更新时跳过等待
+          clientsClaim: true, // 启用控制客户端页面的功能
           runtimeCaching: [
             {
-              urlPattern: /\.(js|css|woff2|woff|ttf)$/,
-              handler: "CacheFirst",
+              urlPattern: /\.(js|css|woff2|woff|ttf)$/,  // 确保缓存 JS, CSS 和字体文件
+              handler: "CacheFirst",  // 优先使用缓存
               options: {
                 cacheName: "js-css-cache",
               },
             },
             {
-              urlPattern: /\.(png|jpe?g|svg|gif|bmp|psd|tiff|tga|eps)$/,
+              urlPattern: /\.(png|jpe?g|svg|gif|bmp|psd|tiff|tga|eps)$/,  // 图片缓存
               handler: "CacheFirst",
               options: {
                 cacheName: "image-cache",
