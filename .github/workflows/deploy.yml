@@ -39,11 +39,9 @@ jobs:
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
-        permissions:
-          contents: write
-          releases: write
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          target_commitish: master
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
           draft: false
