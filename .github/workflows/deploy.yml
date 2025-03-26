@@ -3,7 +3,7 @@ name: Deploy Website
 on:
   push:
     tags:
-      - 'v*'  # 仅当推送以 'v' 开头的标签时触发
+      - 'v*'
 
 jobs:
   build:
@@ -16,35 +16,32 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # 使用 Node.js 18 版本
+          node-version: '18'
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: '8.0.0'  # 安装指定版本的 pnpm
+          version: '8.0.0'
 
       - name: Install dependencies
         run: |
-          pnpm install  # 使用 pnpm 安装依赖
+          pnpm install
 
       - name: Build project
         run: |
-          pnpm build  # 使用 Vite 构建项目
+          pnpm build
           echo "Build completed. Listing files:"
-          ls -R  # List all files in the current directory to confirm if dist exists
+          ls -R
 
-      - name: Zip the dist directory with version string
+      - name: Zip the dist directory
         run: |
-          VERSION_TAG=${GITHUB_REF##*/}  # Extract the version from the tag (e.g., v2.0.1)
-          echo "Version tag: ${VERSION_TAG}"
-          zip -r "website-build-${VERSION_TAG}.zip" dist  # Create the zip file with versioned name
-          ls -l  # List files in the current directory to confirm the zip file exists
+          zip -r website-build.zip dist
 
       - name: Upload build output as artifact
         uses: actions/upload-artifact@v4
         with:
           name: website-build
-          path: "website-build-${VERSION_TAG}.zip"  # Upload the zip file with the version tag
+          path: website-build.zip
 
   release:
     needs: build
@@ -54,13 +51,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: List files in the root directory for debugging
-        run: ls -R  # List files to confirm dist folder location
+        run: ls -R
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: "website-build-${{ github.ref_name }}.zip"  # Use the versioned zip file
-          token: ${{ secrets.RELEASE_TOKEN }}  # Use the GitHub Personal Access Token (PAT)
-          tag_name: ${{ github.ref_name }}  # Use the pushed tag as the release tag name
+          files: website-build.zip
+          token: ${{ secrets.RELEASE_TOKEN }}
+          tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
           prerelease: false
