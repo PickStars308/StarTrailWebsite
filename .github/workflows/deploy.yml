@@ -18,9 +18,14 @@ jobs:
         with:
           node-version: '18'  # 使用 Node.js 18 版本
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: '8.0.0'  # 安装指定版本的 pnpm
+
       - name: Install dependencies
         run: |
-          pnpm install
+          pnpm install  # 使用 pnpm 安装依赖
 
       - name: Build project
         run: |
