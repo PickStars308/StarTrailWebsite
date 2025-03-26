@@ -25,19 +25,24 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pnpm install  # 使用 pnpm 安装依赖
+          pnpm install
 
       - name: Build project
         run: |
-          pnpm build  # 使用 Vite 构建项目
+          pnpm build
           echo "Build completed. Listing files:"
-          ls -R  # List all files in the current directory to confirm if dist exists
+          ls -R 
+
+      - name: Zip the dist directory
+        run: |
+          VERSION_TAG=${GITHUB_REF##*/}
+          zip -r "website-build-${VERSION_TAG}.zip" dist
 
       - name: Upload build output as artifact
         uses: actions/upload-artifact@v4
         with:
           name: website-build
-          path: dist  # 将 dist 目录中的文件上传为 Artifact
+          path: website-build.zip  # 上传压缩文件
 
   release:
     needs: build
@@ -46,13 +51,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: List files in the root directory for debugging
-        run: ls -R  # List files to confirm dist folder location
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist  # 上传 dist 中的文件
+          files: "website-build-${{ github.ref_name }}.zip"  # 上传压缩文件
           token: ${{ secrets.RELEASE_TOKEN }}  # 使用 PAT 代替 GITHUB_TOKEN
           tag_name: ${{ github.ref_name }}  # 使用推送的标签作为 Release 的 tag 名
           name: Release ${{ github.ref_name }}
