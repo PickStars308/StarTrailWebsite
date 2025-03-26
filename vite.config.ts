@@ -13,6 +13,7 @@ export default ({ mode }: { mode: string }) =>
   defineConfig({
 
     build: {
+      outDir: "dist",
       target: "esnext",
       chunkSizeWarningLimit: 1500,
       minify: "terser",

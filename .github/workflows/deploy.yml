@@ -30,9 +30,8 @@ jobs:
       - name: Build project
         run: |
           pnpm build  # 使用 Vite 构建项目
-
-      - name: List files in dist directory (for debugging)
-        run: ls -R dist  # 验证 dist 目录是否已生成
+          echo "Build completed. Listing files:"
+          ls -R  # List all files in the current directory to confirm if dist exists
 
       - name: Upload build output as artifact
         uses: actions/upload-artifact@v4
@@ -47,8 +46,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: List files in dist directory
-        run: ls -R dist  # 验证 dist 目录是否存在并列出文件
+      - name: List files in the root directory for debugging
+        run: ls -R  # List files to confirm dist folder location
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
