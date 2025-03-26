@@ -33,11 +33,18 @@ jobs:
           echo "Build completed. Listing files:"
           ls -R  # List all files in the current directory to confirm if dist exists
 
+      - name: Zip the dist directory with version string
+        run: |
+          VERSION_TAG=${GITHUB_REF##*/}  # Extract the version from the tag (e.g., v2.0.1)
+          echo "Version tag: ${VERSION_TAG}"
+          zip -r "website-build-${VERSION_TAG}.zip" dist  # Create the zip file with versioned name
+          ls -l  # List files in the current directory to confirm the zip file exists
+
       - name: Upload build output as artifact
         uses: actions/upload-artifact@v4
         with:
           name: website-build
-          path: dist  # 将 dist 目录中的文件上传为 Artifact
+          path: "website-build-${VERSION_TAG}.zip"  # Upload the zip file with the version tag
 
   release:
     needs: build
@@ -52,8 +59,8 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist  # 上传 dist 中的文件
-          token: ${{ secrets.RELEASE_TOKEN }}  # 使用 PAT 代替 GITHUB_TOKEN
-          tag_name: ${{ github.ref_name }}  # 使用推送的标签作为 Release 的 tag 名
+          files: "website-build-${{ github.ref_name }}.zip"  # Use the versioned zip file
+          token: ${{ secrets.RELEASE_TOKEN }}  # Use the GitHub Personal Access Token (PAT)
+          tag_name: ${{ github.ref_name }}  # Use the pushed tag as the release tag name
           name: Release ${{ github.ref_name }}
           prerelease: false
