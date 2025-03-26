@@ -18,7 +18,6 @@
         </el-select>
       </div>
       <p>{{ t("Settings.SelectedLanguage") }}{{ selectedLanguageLabel }}</p>
-      <!-- Display the selected language -->
     </div>
   </div>
 </template>
@@ -127,12 +126,21 @@ const selectedLanguageLabel = computed(() => {
       justify-content: space-between;
 
       .language-dropdown {
-        width: 200px;
+        width: 100px;
       }
     }
   }
 }
 
+@media screen and (max-width: 700px) {
+  .DialogOut {
+    .DialogView {
+      width: 76%;
+      height: 80%;
+    }
+
+  }
+}
 /* Fade-in effect */
 @keyframes fadeIn {
   0% {

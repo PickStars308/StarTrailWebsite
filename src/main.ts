@@ -11,6 +11,8 @@ import "element-plus/dist/index.css";
 import "@/assets/Style/Style.scss";
 import "@/assets/iconfont/iconfont.js";
 
+import http from "@/Utils/Axios";
+
 import router from "./router";
 
 import i18n from "./Lang"; //引入国际化
@@ -18,6 +20,8 @@ import i18n from "./Lang"; //引入国际化
 const app = createApp(App);
 
 const pinia = createPinia();
+
+app.config.globalProperties.$axios = http;
 
 app.use(router);
 

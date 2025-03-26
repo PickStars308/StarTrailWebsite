@@ -15,9 +15,9 @@
 </template>
 
 <script lang="ts" setup>
-import axios from "axios";
 import { onMounted, ref } from "vue";
 import { ElNotification } from "element-plus";
+import http from "@/Utils/Axios";
 
 // 定义数据类型
 interface ProfileItem {
@@ -31,7 +31,7 @@ const profileData = ref<ProfileItem[]>([]);
 // 异步获取个人介绍数据
 const fetchProfileData = async () => {
   try {
-    const response = await axios.get("/assets/Data/Json/Profile.json"); // 修改为你的 JSON 文件路径
+    const response = await http.get("/assets/Data/Json/Profile.json"); // 修改为你的 JSON 文件路径
     if (Array.isArray(response.data)) {
       profileData.value = response.data;
     } else {

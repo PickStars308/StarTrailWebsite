@@ -1,9 +1,9 @@
-import axios from "axios";
-import { ElNotification } from "element-plus"; // 确保根据您使用的 UI 库进行适当的调整
+import { ElNotification } from "element-plus";
+import http from "@/Utils/Axios";
 
 export async function FetchDownload(Version: string) {
   try {
-    const response = await axios.get("/assets/Data/Json/Version.json");
+    const response = await http.get("/assets/Data/Json/Version.json");
     const jxresponse = response.data;
 
     // 检查主开关

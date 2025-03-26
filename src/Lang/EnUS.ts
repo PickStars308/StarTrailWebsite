@@ -10,7 +10,7 @@ export default {
   Settings: {
     Setting: "Setting",
     LanguageSetting: "Language Setting",
-    SelectedLanguage: "Selected Language：",
+    SelectedLanguage: "Language：",
   },
   Layout: {
     Home: "Home",

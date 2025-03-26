@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import axios from "axios";
-import { ref, onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import { ElNotification } from "element-plus";
-import { Icon } from "@iconify/vue";
+import http from "@/Utils/Axios";
+
 
 // 定义联系人数据类型
 interface Contact {
@@ -18,7 +18,7 @@ const contacts = ref<Contact[]>([]);
 // 异步获取联系人数据
 const fetchContacts = async () => {
   try {
-    const response = await axios.get("/assets/Data/Json/Contacts.json"); // 假设 JSON 文件路径
+    const response = await http.get("/assets/Data/Json/Contacts.json"); // 假设 JSON 文件路径
     if (Array.isArray(response.data)) {
       contacts.value = response.data;
     } else {

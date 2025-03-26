@@ -1,6 +1,7 @@
 <script lang="ts">
 // 示例：输出带图标的日志
 import { ConsoleLogger } from "./Utils/ConsoleLogger";
+import http from "@/Utils/Axios";
 
 const icon = `
 
@@ -80,7 +81,7 @@ const WebConfig = ref({
 // 请求配置文件
 onMounted(async () => {
   try {
-    const response = await axios.get("/assets/Data/Json/WebConfig.json");
+    const response = await http.get("/assets/Data/Json/WebConfig.json");
 
     if (response.data) {
       WebConfig.value = response.data;

@@ -14,10 +14,11 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from "vue";
-import axios from "axios";
+import { onMounted, ref } from "vue";
 import { ElNotification } from "element-plus";
 import { useI18n } from "vue-i18n";
+import http from "@/Utils/Axios";
+
 const { t } = useI18n();
 
 // 定义导航项数据类型
@@ -34,7 +35,7 @@ const navItems = ref<NavItem[]>([]);
 // 异步获取导航项数据
 const fetchNavItems = async () => {
   try {
-    const response = await axios.get("/assets/Data/Json/NavItems.json");
+    const response = await http.get("/assets/Data/Json/NavItems.json");
     if (Array.isArray(response.data)) {
       navItems.value = response.data;
     } else {
