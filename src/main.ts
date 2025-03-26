@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 
-import App from "./App.vue"; // 找不到模块“./app.vue”或其相应的类型声明
+import App from "./App.vue";
 
 import { createPinia } from "pinia";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
@@ -11,6 +11,8 @@ import "element-plus/dist/index.css";
 import "@/assets/Style/Style.scss";
 import "@/assets/iconfont/iconfont.js";
 
+import http from "@/Utils/Axios";
+
 import router from "./router";
 
 import i18n from "./Lang"; //引入国际化
@@ -18,6 +20,8 @@ import i18n from "./Lang"; //引入国际化
 const app = createApp(App);
 
 const pinia = createPinia();
+
+app.config.globalProperties.$axios = http;
 
 app.use(router);
 

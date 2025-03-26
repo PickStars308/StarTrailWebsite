@@ -11,8 +11,10 @@ import { VitePWA } from "vite-plugin-pwa";
 // https://vite.dev/config/
 export default ({ mode }: { mode: string }) =>
   defineConfig({
+
     build: {
-      chunkSizeWarningLimit: 1000,
+      target: 'esnext',
+      chunkSizeWarningLimit: 1500,
       minify: "terser",
       terserOptions: {
         compress: {
@@ -97,4 +99,5 @@ export default ({ mode }: { mode: string }) =>
         "@": resolve(__dirname, "./src"),
       },
     },
+
   });

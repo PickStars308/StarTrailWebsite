@@ -1,9 +1,9 @@
 <script lang="ts">
-console.info(
-  `
-%c 摘星辰 - 星辰工具箱
-%c
+// 示例：输出带图标的日志
+import { ConsoleLogger } from "./Utils/ConsoleLogger";
+import http from "@/Utils/Axios";
 
+const icon = `
 
   ██████╗ ██╗ ██████╗██╗  ██╗    ███████╗████████╗ █████╗ ██████╗ ███████╗
   ██╔══██╗██║██╔════╝██║ ██╔╝    ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔════╝
@@ -12,24 +12,23 @@ console.info(
   ██║     ██║╚██████╗██║  ██╗    ███████║   ██║   ██║  ██║██║  ██║███████║
   ╚═╝     ╚═╝ ╚═════╝╚═╝  ╚═╝    ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
 
-%c
-  版本信息：${import.meta.env.VITE_PICKSTARS_VERSION || "未知"}
-  作者：摘星辰
-  Github：https://github.com/PickStars308
-  网站：https://xinstudio.top
+    `;
 
-`,
-  "font-size: 20px;font-weight: 600;color: #000000;",
-  "font-size:12px;color: #000000;",
-  "font-size:12px;color: #000000;",
-);
+const appInfo = {
+  版本: import.meta.env.VITE_PICKSTARS_VERSION,
+  作者: "摘星辰",
+  "作者 GitHub": "https://github.com/PickStars308",
+  网站: "https://pickstars.us.kg/",
+};
+
+ConsoleLogger.logStructured(appInfo, icon, "font-size: 16px;color: #50b16e;");
 </script>
 
 <script setup lang="ts">
-import StarTrails from "./components/StarTrails.vue";
-import Lantern from "./components/Lantern.vue";
+import StarTrails from "@/components/StarTrails.vue";
+import Lantern from "@/components/Lantern.vue";
 
-import Loading from "./components/Loading.vue";
+import Loading from "@/components/Loading.vue";
 
 import { ref, onMounted } from "vue";
 import axios from "axios";
@@ -60,7 +59,7 @@ onMounted(() => {
       if (scrollTop > 0.7 * window.innerHeight) bg.classList.add("fixed");
       else bg.classList.remove("fixed");
     } else {
-      console.error("Background not found");
+      console.error("未找到 Background Document....");
     }
 
     if (window.scrollY > 0) {
@@ -82,7 +81,7 @@ const WebConfig = ref({
 // 请求配置文件
 onMounted(async () => {
   try {
-    const response = await axios.get("/assets/Data/Json/WebConfig.json");
+    const response = await http.get("/assets/Data/Json/WebConfig.json");
 
     if (response.data) {
       WebConfig.value = response.data;
@@ -90,7 +89,7 @@ onMounted(async () => {
 
       if (WebConfig.value.Lantern.Enable) {
         ElNotification({
-          title: "提升",
+          title: "提示",
           message: `祝各位新年快乐~`,
           type: "info",
         });
@@ -98,7 +97,7 @@ onMounted(async () => {
     } else {
       ElNotification({
         title: "提示",
-        message: "获取的配置数据格式不正确。",
+        message: "获取的配置数据格式不正确",
         type: "warning",
       });
     }

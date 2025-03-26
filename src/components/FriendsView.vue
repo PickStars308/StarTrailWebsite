@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import axios from "axios";
 import { onMounted, ref } from "vue";
 import { ElNotification } from "element-plus";
+import http from "@/Utils/Axios";
 
 // 定义友人数据类型
 interface Friend {
@@ -16,7 +16,7 @@ const friends = ref<Friend[]>([]);
 // 异步获取友人数据
 const fetchFriends = async () => {
   try {
-    const response = await axios.get("/assets/Data/Json/Friends.json");
+    const response = await http.get("/assets/Data/Json/Friends.json");
     if (Array.isArray(response.data)) {
       friends.value = response.data;
     } else {

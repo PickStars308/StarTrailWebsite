@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useMainStore } from "@/stores/index";
-import axios from "axios";
+import http from "@/Utils/Axios";
 
 import { ElNotification } from "element-plus";
 import { onMounted, ref } from "vue";
@@ -19,7 +19,7 @@ const skills = ref<Skill[]>([]); // 指定 skills 的类型为 Skill[]
 // 获取技能数据的函数
 async function fetchSkills() {
   try {
-    const response = await axios.get("/assets/Data/Json/Skills.json");
+    const response = await http.get("/assets/Data/Json/Skills.json");
     if (Array.isArray(response.data)) {
       skills.value = response.data;
       userStore.setLoading(false);

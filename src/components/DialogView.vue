@@ -1,24 +1,23 @@
 <template>
-  <div class="DialogOut" v-if="dialogVisible" @click.self="startCloseDialog">
-    <div :class="['DialogView', { 'fade-out': isClosing }]">
+  <div v-if="dialogVisible" class="DialogOut" @click.self="startCloseDialog">
+    <div :class="['DialogView', { 'fade-out': isClosing }]" @wheel.prevent>
       <div class="dialog-header">
-        <h3>{{ $t("Settings.Setting") }}</h3>
+        <h3>{{ t("Settings.Setting") }}</h3>
         <el-button @click="startCloseDialog" class="close-btn">X</el-button>
       </div>
 
       <div class="LanguageSet">
-        <h3>{{ $t("Settings.LanguageSetting") }}</h3>
+        <h3>{{ t("Settings.LanguageSetting") }}</h3>
         <el-select
           v-model="selectedLanguage"
-          placeholder="Select Language"
           class="language-dropdown"
+          placeholder="Select Language"
         >
           <el-option label="English" value="EnUs"></el-option>
           <el-option label="中文" value="ZhCN"></el-option>
         </el-select>
       </div>
-      <p>{{ $t("Settings.SelectedLanguage") }}{{ selectedLanguageLabel }}</p>
-      <!-- Display the selected language -->
+      <p>{{ t("Settings.SelectedLanguage") }}{{ selectedLanguageLabel }}</p>
     </div>
   </div>
 </template>
@@ -28,6 +27,8 @@ import { computed, ref, watch } from "vue";
 
 import { useMainStore } from "../stores";
 import { useI18n } from "vue-i18n";
+
+const { t } = useI18n(); // 解构出t方法
 
 const store = useMainStore();
 const dialogVisible = ref(store.getShowDialog);
@@ -42,14 +43,21 @@ watch(
     dialogVisible.value = newValue;
     if (newValue) {
       isClosing.value = false;
+
+      // 禁用鼠标滚动
+      document.documentElement.style.overflow = "hidden";
     }
   },
 );
 
 const startCloseDialog = () => {
   isClosing.value = true;
+
+  document.documentElement.style.overflow = "scroll";
+
   setTimeout(() => {
     dialogVisible.value = false;
+
     store.setShowDialog(false);
   }, 300);
 };
@@ -65,7 +73,7 @@ const selectedLanguageLabel = computed(() => {
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .DialogOut {
   position: fixed;
   top: 0;
@@ -118,12 +126,21 @@ const selectedLanguageLabel = computed(() => {
       justify-content: space-between;
 
       .language-dropdown {
-        width: 200px;
+        width: 100px;
       }
     }
   }
 }
 
+@media screen and (max-width: 700px) {
+  .DialogOut {
+    .DialogView {
+      width: 76%;
+      height: 80%;
+    }
+
+  }
+}
 /* Fade-in effect */
 @keyframes fadeIn {
   0% {
