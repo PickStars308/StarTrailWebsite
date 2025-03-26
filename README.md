@@ -22,7 +22,10 @@ English | [简体中文](README-CN.md)
 
 ### V1.0
 
-![Preview Image](https://gh.bbxss.com/https://raw.githubusercontent.com/PickStars308/StarTrailWebsite/master/Preview/1.0.png 'Preview Image')
+![Preview Image](https://raw.githubusercontent.com/PickStars308/StarTrailWebsite/master/Preview/1.0.png 'Preview Image')
+
+### V2.0
+![Preview Image](https://raw.githubusercontent.com/PickStars308/StarTrailWebsite/master/Preview/2.0.png 'Preview Image')
 
 ## Instructions
 
