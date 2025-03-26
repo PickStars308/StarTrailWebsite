@@ -52,7 +52,7 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/*  # 上传 dist 中的文件
+          files: dist  # 上传 dist 中的文件
           token: ${{ secrets.RELEASE_TOKEN }}  # 使用 PAT 代替 GITHUB_TOKEN
           tag_name: ${{ github.ref_name }}  # 使用推送的标签作为 Release 的 tag 名
           name: Release ${{ github.ref_name }}
