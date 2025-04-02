@@ -22,11 +22,10 @@
 
 ### V1.0
 
-![Preview Image](https://github.com/PickStars308/StarTrailWebsite/blob/master/Preview/1.0.png 'Preview Image')
+![Preview Image](https://github.com/PickStars308/StarTrailWebsite/blob/dev/Preview/1.0.png 'Preview Image')
 
 ### V2.0
-
-![Preview Image](https://github.com/PickStars308/StarTrailWebsite/blob/master/Preview/2.0.png 'Preview Image')
+![Preview Image](https://github.com/PickStars308/StarTrailWebsite/blob/dev/Preview/2.0.png 'Preview Image')
 
 ## 使用说明
 
