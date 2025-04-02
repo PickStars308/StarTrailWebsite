@@ -138,7 +138,6 @@ const selectedLanguageLabel = computed(() => {
       width: 76%;
       height: 80%;
     }
-
   }
 }
 /* Fade-in effect */

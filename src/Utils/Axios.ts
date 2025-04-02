@@ -1,7 +1,8 @@
-import axios, { AxiosInstance, InternalAxiosRequestConfig } from "axios";
+import axios, { type AxiosInstance, type InternalAxiosRequestConfig } from 'axios';
 
+// 模块增强：为 InternalAxiosRequestConfig 添加自定义字段
 declare module "axios" {
-  interface AxiosRequestConfig {
+  interface InternalAxiosRequestConfig<D = any> {
     meta?: {
       requestStartedAt?: number; // 用于记录请求开始时间
     };
@@ -18,7 +19,7 @@ const createAxiosInstance = (): AxiosInstance => {
     },
   });
 
-  // 请求拦截器 (带类型声明)
+  // 请求拦截器 (使用 InternalAxiosRequestConfig 类型)
   instance.interceptors.request.use(
     (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
       if (config.url?.endsWith(".json")) {
@@ -40,16 +41,14 @@ const createAxiosInstance = (): AxiosInstance => {
 // 导出配置好的实例
 const http = createAxiosInstance();
 
-// 在 axios.ts 中添加响应拦截器
+// 响应拦截器
 http.interceptors.response.use(
   (response) => {
     // 成功响应数据处理
     if (import.meta.env.MODE === "development") {
       console.log(
         `[API] ${response.config.url}`,
-        `Duration: ${
-          Date.now() - (response.config.meta?.requestStartedAt || 0)
-        }ms`
+        `Duration: ${Date.now() - (response.config.meta?.requestStartedAt || 0)}ms`,
       );
     }
     return response;
@@ -60,7 +59,7 @@ http.interceptors.response.use(
       console.error("API Error:", error.response.status, error.response.data);
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 export default http;

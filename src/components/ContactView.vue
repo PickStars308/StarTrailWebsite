@@ -3,7 +3,6 @@ import { onMounted, ref } from "vue";
 import { ElNotification } from "element-plus";
 import http from "@/Utils/Axios";
 
-
 // 定义联系人数据类型
 interface Contact {
   name: string;

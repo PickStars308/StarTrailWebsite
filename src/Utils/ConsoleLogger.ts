@@ -65,7 +65,7 @@ export class ConsoleLogger {
    * @param styles 样式数组
    */
   static logColored(messages: string[], styles: string[]): void {
-    const formattedMessages = messages.map((msg, index) => `%c${msg}`).join("");
+    const formattedMessages = messages.map(msg => `%c${msg}`).join("");
     console.log(formattedMessages, ...styles);
   }
 }

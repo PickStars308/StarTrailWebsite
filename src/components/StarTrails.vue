@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount } from "vue";
+import { onMounted } from "vue";
 
 onMounted(() => {
   // 创建两个 canvas 元素，show 用于显示，help 作为辅助

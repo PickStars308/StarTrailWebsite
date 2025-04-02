@@ -31,7 +31,6 @@ import Lantern from "@/components/Lantern.vue";
 import Loading from "@/components/Loading.vue";
 
 import { ref, onMounted } from "vue";
-import axios from "axios";
 
 import { ElNotification } from "element-plus";
 

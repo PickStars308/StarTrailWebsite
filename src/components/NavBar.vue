@@ -16,10 +16,7 @@
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
 import { ElNotification } from "element-plus";
-import { useI18n } from "vue-i18n";
 import http from "@/Utils/Axios";
-
-const { t } = useI18n();
 
 // 定义导航项数据类型
 interface NavItem {

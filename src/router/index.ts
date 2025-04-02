@@ -1,4 +1,4 @@
-import { createMemoryHistory, createRouter, createWebHistory } from "vue-router";
+import { createMemoryHistory, createRouter } from "vue-router";
 
 // 路由配置
 const routes = [
